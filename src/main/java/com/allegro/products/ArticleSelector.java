@@ -19,8 +19,10 @@ public class ArticleSelector {
   }
 
   public void addToBasketFirstDisplayedArticle() {
+    mainPage.closeConsentsIfExist();
     mainPage.selectFirstProduct();
     productInformationHolder.setProductName(productPage.provideArticleNameFromMeta());
+    mainPage.closeConsentsIfExist();
     productPage.addArticleToBasket();
     productPage.goToBasket();
   }
